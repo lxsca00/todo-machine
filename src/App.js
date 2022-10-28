@@ -1,10 +1,10 @@
 //import './App.css';
 
-import { CreateToDoButton } from "./CreateToDoButton";
-import { ToDoCounter } from "./ToDoCounter";
-import { ToDoItem } from "./ToDoItem";
-import { ToDoList } from "./ToDoList";
-import { ToDoSearch } from "./ToDoSearch";
+import { CreateToDoButton } from "./CreateToDoButton/CreateToDoButton";
+import { ToDoCounter } from "./ToDoCounter/ToDoCounter";
+import { ToDoItem } from "./ToDoItem/ToDoItem";
+import { ToDoList } from "./ToDoList/ToDoList";
+import { ToDoSearch } from "./ToDoSearch/ToDoSearch";
 
 const toDo = [
   { text: "Revisar mi masterlist", complete: false },
