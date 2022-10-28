@@ -8,7 +8,7 @@ import { ToDoSearch } from "./ToDoSearch/ToDoSearch";
 
 const toDo = [
   { text: "Revisar mi masterlist", complete: false },
-  { text: "Pagar envios", complete: false },
+  { text: "Pagar envios", complete: true },
   { text: "Deprimirse", complete: false },
   { text: "Llorar y terminar cursos", complete: false },
   {
@@ -20,11 +20,12 @@ const toDo = [
 function App() {
   return (
     <>
+    <h1 className="appTitle">Get this shit</h1>
       <ToDoCounter />
       <ToDoSearch />
       <ToDoList>
         {toDo.map(oneToDo => (
-          <ToDoItem key={oneToDo.text} text={oneToDo.text}/>
+          <ToDoItem key={oneToDo.text} text={oneToDo.text} complete={oneToDo.complete}/>
         ))}
         
       </ToDoList>

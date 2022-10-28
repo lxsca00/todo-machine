@@ -1,5 +1,5 @@
 .ToDoCounter {
-    font-size: 24px;
-    color: blueviolet;
     text-align: center;
+    margin: 0;
+    font-weight: 400;
 }

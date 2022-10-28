@@ -1,8 +1,9 @@
 import React from "react";
+import "./CreateToDoButton.css"
 
 const CreateToDoButton = () => (
   <>
-    <button>+</button>
+    <button className="CreateTodoButton">+</button>
   </>
 );
 
