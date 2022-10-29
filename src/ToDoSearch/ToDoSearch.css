@@ -1,7 +1,16 @@
 .ToDoSearch {
     border: none;
-    width: 90%;
+    width: 85%;
     background: #F5F5F5;
     border-radius: 16px;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem 0;
+}
+
+.ToDoSearch::placeholder {
+    font-family: 'Montserrat';
+}
+
+.ToDoSearch:focus {
+    outline-color: #4FA095;
 }
