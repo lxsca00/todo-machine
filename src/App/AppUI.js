@@ -7,6 +7,7 @@ import { ToDoList } from "../ToDoList";
 import { ToDoSearch } from "../ToDoSearch";
 import { Modal } from "../Modal";
 import { ToDoForm } from "../ToDoForm";
+import { EmptyToDo, ToDoError, ToDoLoading } from "../LoadingSkeletons/ToDoSkeletons";
 
 const AppUI = () => {
   const {
@@ -25,9 +26,9 @@ const AppUI = () => {
       <ToDoCounter />
       <ToDoSearch />
       <ToDoList>
-        {error && <p>Aquí hay un error, auxilio</p>}
-        {loading && <p>Aquí se está cargando algo</p>}
-        {!loading && !searchedToDo.length && <p>¡Crea tu primer To Do!</p>}
+        {error && <ToDoError error={error}/>}
+        {loading && <ToDoLoading/>}
+        {!loading && !searchedToDo.length && <EmptyToDo/>}
         {searchedToDo.map((oneToDo) => (
           <ToDoItem
             key={oneToDo.text}
