@@ -12,6 +12,7 @@ function ToDoProvider(props) {
   } = useLocalStorage("TODOS_V1", []);
 
   const [searchValue, setSearchValue] = useState("");
+  const [openModal, setOpenModal] = useState(false)
 
   const completedToDo = toDo.filter((oneToDo) => !!oneToDo.complete).length;
 
@@ -43,6 +44,15 @@ function ToDoProvider(props) {
     saveToDo(newToDo);
   };
 
+  const addToDo = (text) => {
+    const newToDo = [...toDo];
+    newToDo.push({
+      text,
+      completed: false
+    })
+    saveToDo(newToDo)
+  }
+
   return (
     <ToDoContext.Provider
       value={{
@@ -53,8 +63,11 @@ function ToDoProvider(props) {
         searchValue,
         setSearchValue,
         searchedToDo,
+        addToDo,
         completeToDo,
         deleteToDo,
+        openModal, 
+        setOpenModal
       }}
     >
       {props.children}

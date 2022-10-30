@@ -5,10 +5,19 @@ import { ToDoCounter } from "../ToDoCounter";
 import { ToDoItem } from "../ToDoItem";
 import { ToDoList } from "../ToDoList";
 import { ToDoSearch } from "../ToDoSearch";
+import { Modal } from "../Modal";
+import { ToDoForm } from "../ToDoForm";
 
 const AppUI = () => {
-  const { error, loading, searchedToDo, completeToDo, deleteToDo } =
-    useContext(ToDoContext);
+  const {
+    error,
+    loading,
+    searchedToDo,
+    completeToDo,
+    deleteToDo,
+    openModal,
+    setOpenModal,
+  } = useContext(ToDoContext);
 
   return (
     <>
@@ -29,7 +38,14 @@ const AppUI = () => {
           />
         ))}
       </ToDoList>
-      <CreateToDoButton />
+      {!!openModal && (
+        <Modal>
+          <ToDoForm/>
+        </Modal>
+      )}
+      <CreateToDoButton 
+        onOpenModal={setOpenModal}
+      />
     </>
   );
 };
