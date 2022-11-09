@@ -22,7 +22,7 @@ const AppUI = () => {
 
   return (
     <>
-      <h1 className="appTitle">Get this shit</h1>
+      <h1 className="appTitle">Get this task!</h1>
       <ToDoCounter />
       <ToDoSearch />
       <ToDoList>
